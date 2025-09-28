@@ -12,8 +12,14 @@ const dbData = []
     res.json("Submit Success....")
  }
 
+
+const showDataController =(req, res)=>{
+    res.json(dbData)
+}
+
 module.exports = {
     homecontroller,
     userDataController,
-    dataController
+    dataController,
+    showDataController
 }

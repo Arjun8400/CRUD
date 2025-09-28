@@ -4,6 +4,6 @@ const userController = require("../controller/user")
 router.get("/", userController.homecontroller)
 router.get("/user", userController.userDataController)
 router.post("/data", userController.dataController)
-
+router.get("/showdata", userController.showDataController)
 
 module.exports = router
