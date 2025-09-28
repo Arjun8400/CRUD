@@ -1,9 +1,11 @@
 import React from 'react'
+import Form from './Form'
 
 const App = () => {
   return (
     <>
-    <h1>Hello Arjun</h1>
+    <h1>Fontent 😎</h1>
+    <Form/>
     </>
   )
 }

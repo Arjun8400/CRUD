@@ -5,7 +5,7 @@ dotenv.config()
 const apiRouter = require("./routes/api")
 
 
-
+app.use(express.json())
 app.use(express.static("public"))
 app.use("/api", apiRouter)
 let port = process.env.PORT
