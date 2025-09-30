@@ -12,6 +12,13 @@ const dbData = []
     res.json("Submit Success....")
  }
 
+const userDeleteController = (req, res)=>{
+    const userId = parseInt(req.params.id)
+    console.log(userId)
+    // const filterData = dbData.filter((element, index) =>index !== userId)
+    // console.log(filterData)
+}
+
 
 const showDataController =(req, res)=>{
     res.json(dbData)
@@ -21,5 +28,6 @@ module.exports = {
     homecontroller,
     userDataController,
     dataController,
-    showDataController
+    showDataController,
+    userDeleteController
 }

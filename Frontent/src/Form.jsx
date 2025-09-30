@@ -29,6 +29,12 @@ const Form = () => {
     })
   }
 
+  function handleDelete(id){
+    fetch('/api/userdelete/:id',{
+      method:"DELETE"
+    })
+  }
+
   return (
     <div>
       <form action="" onSubmit={handleChange}>
@@ -39,16 +45,34 @@ const Form = () => {
       <br />
       <br />
       <button onClick={handleData}>Show user Data</button>
-      {
-        data.map((itam) => (
-          <ul>
-            <li>{itam.UserName}</li>
-          </ul>
+      <table>
+        {
+           data.map((itam, index) => (
+          <tr>
+                <td>
+                  <span>{itam.UserName}</span>
+                </td>
+                <td>
+                  <button onClick={()=>{handleDelete(index)}}>Delete</button>
+                </td>
+                <td>
+                   <button>Update</button>
+                </td>
+              </tr>
         ))
-      }
-
+        }
+      </table>
+      {/* {
+        data.map((itam, index) =>
+          <ul>
+            <span>{itam.UserName}</span>
+            <button onClick={()=>{handleDelete(index)}}>Delete</button>
+            <button>Update</button>
+          </ul>
+      )} */}
+      
     </div>
   )
 }
 
-export default Form
+export default Form;
