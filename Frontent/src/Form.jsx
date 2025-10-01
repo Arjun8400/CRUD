@@ -30,8 +30,11 @@ const Form = () => {
   }
 
   function handleDelete(id){
-    fetch('/api/userdelete/:id',{
+    fetch(`/api/userdelete/${id}`,{
       method:"DELETE"
+    }).then((res)=>{return res.json()}).then((result)=>{
+      console.log(result)
+      setData(result.data)
     })
   }
 

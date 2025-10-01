@@ -5,7 +5,7 @@ const userDataController =(req, res)=>{
     res.send("user Name : - Arjun prajapati")
 }
 
-const dbData = []
+let dbData = []
 
  const dataController = (req, res)=>{
     dbData.push(req.body)
@@ -14,9 +14,11 @@ const dbData = []
 
 const userDeleteController = (req, res)=>{
     const userId = parseInt(req.params.id)
-    console.log(userId)
-    // const filterData = dbData.filter((element, index) =>index !== userId)
-    // console.log(filterData)
+    const filterData = dbData.filter((element, index) =>index !== userId)
+    dbData = [...filterData]
+    console.log(dbData)
+
+    res.json({massege:"Delete Successfully", data:filterData})
 }
 
 
