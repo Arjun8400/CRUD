@@ -11,9 +11,7 @@ const Form = () => {
     const formData = { UserName: user }
     fetch('/api/data', { // Replace with your backend endpoint
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: {'Content-Type': 'application/json',},
       body: JSON.stringify(formData), // Convert data to JSON string
     }).then((res) => { return res.json() }).then((result) => {
       console.log(result)
@@ -37,6 +35,8 @@ const Form = () => {
       setData(result.data)
     })
   }
+
+  
 
   return (
     <div>
