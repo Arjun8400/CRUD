@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Form = () => {
 
@@ -59,7 +60,7 @@ const Form = () => {
                   <button onClick={()=>{handleDelete(index)}}>Delete</button>
                 </td>
                 <td>
-                   <button>Update</button>
+                  <Link to={`/update/${index}`}><button>Update</button></Link> 
                 </td>
               </tr>
         ))

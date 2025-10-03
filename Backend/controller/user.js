@@ -5,7 +5,7 @@ const userDataController =(req, res)=>{
     res.send("user Name : - Arjun prajapati")
 }
 
-let dbData = []
+const dbData = []
 
  const dataController = (req, res)=>{
     dbData.push(req.body)
@@ -14,11 +14,9 @@ let dbData = []
 
 const userDeleteController = (req, res)=>{
     const userId = parseInt(req.params.id)
-    const filterData = dbData.filter((element, index) =>index !== userId)
-    dbData = [...filterData]
-    console.log(dbData)
-
-    res.json({massege:"Delete Successfully", data:filterData})
+    console.log(userId)
+    // const filterData = dbData.filter((element, index) =>index !== userId)
+    // console.log(filterData)
 }
 
 
@@ -26,10 +24,31 @@ const showDataController =(req, res)=>{
     res.json(dbData)
 }
 
+
+const userUpdateController = (req,res)=>{
+    const index = req.params.id
+    const singleData= dbData[index]
+    res.json({data:singleData})
+}
+
+const newUpdateValueController= (req ,res)=>{
+    console.log(req)
+
+    // const index = req.params.id
+    // const newValue = req.body.userName
+    // const newObj = {UserName:newValue}
+    // dbData.splice(index,1,newObj)
+    // res.json("Successfully Update..")
+    
+
+}
+
 module.exports = {
     homecontroller,
     userDataController,
     dataController,
     showDataController,
-    userDeleteController
+    userDeleteController,
+    userUpdateController,
+    newUpdateValueController
 }
