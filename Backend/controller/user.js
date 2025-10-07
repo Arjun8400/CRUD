@@ -31,16 +31,24 @@ const userUpdateController = (req,res)=>{
     res.json({data:singleData})
 }
 
-const newUpdateValueController= (req ,res)=>{
-    console.log(req)
+// const newUpdateValueController= (req ,res)=>{
+//     console.log(req)
 
-    // const index = req.params.id
-    // const newValue = req.body.userName
-    // const newObj = {UserName:newValue}
-    // dbData.splice(index,1,newObj)
-    // res.json("Successfully Update..")
+//     // const index = req.params.id
+//     // const newValue = req.body.userName
+//     // const newObj = {UserName:newValue}
+//     // dbData.splice(index,1,newObj)
+//     // res.json("Successfully Update..")
     
 
+// }
+
+
+
+
+const newUpdateValueController = (req, res) => {
+    console.log("Params:", req.params);  // e.g. { id: '1' }
+    console.log("Body:", req.body);      // e.g. { userName: "Arjun Prajapati" }
 }
 
 module.exports = {
